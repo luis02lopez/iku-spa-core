@@ -8,7 +8,7 @@ const Login = () => (
     <Grid container justify="center" className ="login-container">
         <Grid item xs={4} className="login">
             <Grid container justify="center">
-                <img src="../../assets/images/logo.png" alt="Logo" />
+                <img className="login-logo" src={require("../../assets/images/logo.png")} alt="Logo" />
             </Grid>
 
            <Grid className="login-form-container" container>
