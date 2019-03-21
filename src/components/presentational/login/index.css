@@ -1,5 +1,5 @@
 .login-container {
-    background-image: url('../../assets/images/office.png');
+    background-image: url('../../../assets/images/office.png');
     height: 100vh;
     width: 100%;
     background-size: cover;
@@ -9,16 +9,16 @@
 
 .login {
     margin-top: 30px !important;
-    padding-top: 20px;
 }
 .login-form-container{
-    padding: 30px;
-    margin-top: 6rem;
+    padding: 4rem;
+    margin-top: 2rem;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.7);
 }
 
 .login-logo {
-    width: 350px;
+    width: 350px;   
     height: 100px;
 }
 
@@ -33,7 +33,11 @@
     border-right: 1px solid;
     padding-right: 10px;
 }
-
+.btn-login{
+    background: #333333 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
 .input-login {
     background: #fff !important;
     border-radius: 0px !important;

@@ -4,18 +4,18 @@ import { LockOutlined } from '@material-ui/icons'
 
 import './index.css';
 
-const Login = () => (
+const Login = ({email, pass, handleChange}) => (
     <Grid container justify="center" className ="login-container">
-        <Grid item xs={4} className="login">
+        <Grid item xs={5} className="login">
             <Grid container justify="center">
-                <img className="login-logo" src={require("../../assets/images/logo.png")} alt="Logo" />
+                <img className="login-logo" src={require("../../../assets/images/logo.png")} alt="Logo" />
             </Grid>
 
            <Grid className="login-form-container" container>
                 <FormGroup row>
                     <FormControl fullWidth variant="filled" >
                         <InputLabel>Usuario</InputLabel>
-                        <FilledInput  autoFocus disableUnderline className="input-login" />
+                        <FilledInput  autoFocus disableUnderline className="input-login" name="email" value={email} onChange={handleChange} />
                     </FormControl>
 
                     <FormControl fullWidth variant="filled" className="mt-4">
@@ -23,15 +23,15 @@ const Login = () => (
                             <LockOutlined className="pass-icon" />
                             Contraseña
                         </InputLabel>
-                        <FilledInput type="password" disableUnderline className="input-login" />
+                        <FilledInput type="password" disableUnderline className="input-login" name="pass" value={pass} onChange={handleChange} />
                     </FormControl>
 
                     <Grid container justify="space-between" className="mt-4">
-                        <Grid container>
+                        <Grid item>
                             <a href="#" className="recover-pass">Recuperar contraseña</a>
                         </Grid>
-                        <Grid container justify="flex-end">
-                            <Button variant="contained" className="">
+                        <Grid item>
+                            <Button variant="contained" className="btn-login">
                                 Ingresar
                             </Button>
                         </Grid>
@@ -42,5 +42,6 @@ const Login = () => (
 
         </Grid>
     </Grid>);
+
 
 export default Login;
