@@ -3,15 +3,17 @@ import { FormGroup, FormControl, InputLabel, FilledInput, Grid, Button } from '@
 
 const SendEmail = () => (
 
-    <FormGroup row>
+    <FormGroup root className="width-100">
         <FormControl fullWidth variant="filled" >
-            <InputLabel>Usuario</InputLabel>
+            <InputLabel>Correo</InputLabel>
             <FilledInput  autoFocus disableUnderline className="input-login" name="send-email"/>
         </FormControl>
-        <Grid item>
-            <Button variant="contained" color="primary">
-                Enviar
-            </Button>
+        <Grid container justify="flex-end" className="mt-4">
+            <Grid item>
+                <Button variant="contained" className="btn-login">
+                    Enviar
+                </Button>
+            </Grid>
         </Grid>
     </FormGroup>
 

@@ -20,6 +20,7 @@ class LoginContainer extends Component {
 
     handleMode = mode => {
         //Change the state ex: Login, send Email, write code...
+        console.log(mode);
         this.setState({ mode });
     }
     render() {
