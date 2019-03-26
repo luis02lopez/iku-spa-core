@@ -5,7 +5,8 @@ import Login from '../../presentational/login';
 class LoginContainer extends Component {
     state = {
         email: '',
-        pass: ''
+        pass: '',
+        mode: 'login'
     }
 
     handleChange = evt => {
@@ -16,10 +17,15 @@ class LoginContainer extends Component {
         //update value
         this.setState({[name]: value});
     }
+
+    handleMode = mode => {
+        //Change the state ex: Login, send Email, write code...
+        this.setState({ mode });
+    }
     render() {
-        const { email, pass }=  this.state;
+        const { email, pass, mode }=  this.state;
         return (
-            <Login email={email} pass={pass} handleChange={this.handleChange} />
+            <Login email={email} pass={pass} handleChange={this.handleChange} mode={mode} handleMode={this.handleMode} />
         );
     }
 }
