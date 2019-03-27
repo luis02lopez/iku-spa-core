@@ -47,7 +47,9 @@
     border-radius: 0px !important;
     box-shadow: 10px 10px 24px -4px rgba(0,0,0,0.75);
 }
-
-.email-title {
+.text-center {
+    text-align: center;
+}
+.text {
     color: #a7a2a2;
 }

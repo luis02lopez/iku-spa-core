@@ -3,6 +3,8 @@ import { Grid } from '@material-ui/core';
 
 import SignIn from './singIn';
 import SendEmail from './recoveryPassword/sendEmail';
+import VerificationCode from './recoveryPassword/verificationCode';
+import NewPassword from './recoveryPassword/newPassword';
 
 
 import './index.css';
@@ -16,11 +18,14 @@ const Login = ({email, pass, handleChange,mode, handleMode}) => (
 
            <Grid className="login-form-container" container direction="column">
                 <Grid item xs>
-                    <h4 className="email-title">{mode !== 'login' ? 'Recuperar contraseña' : ''}</h4>
+                    <p className="text">{mode !== 'login' ? 'Recuperar contraseña' :
+                         mode === 'new-pass' || mode === 'restored-pass' ? 'Restablecer contraseña' : ''}</p>
                 </Grid>
                 <Grid item xs className="login-form">
                     {mode === 'login' ? <SignIn email={email} pass={pass} handleChange={handleChange} handleMode={handleMode} />
-                    : <SendEmail />}
+                    : mode === 'send-email' ? <SendEmail handleMode={handleMode} />
+                    : mode === 'code' ? <VerificationCode handleMode={handleMode} />
+                    : mode === 'new-pass' ? <NewPassword handleMode={handleMode} /> : ''}
                 </Grid>
            </Grid>
 

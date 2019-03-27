@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormGroup, FormControl, InputLabel, FilledInput, Grid, Button } from '@material-ui/core';
 
-const SendEmail = () => (
+const SendEmail = ({ handleMode }) => (
 
     <FormGroup root className="width-100">
         <FormControl fullWidth variant="filled" >
@@ -10,7 +10,7 @@ const SendEmail = () => (
         </FormControl>
         <Grid container justify="flex-end" className="mt-4">
             <Grid item>
-                <Button variant="contained" className="btn-login">
+                <Button variant="contained" className="btn-login" onClick={ () => handleMode('code')}>
                     Enviar
                 </Button>
             </Grid>

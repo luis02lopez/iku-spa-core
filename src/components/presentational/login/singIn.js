@@ -20,7 +20,7 @@ const SignIn = ({email, pass, handleChange, handleMode}) => (
 
         <Grid container justify="space-between" className="mt-4">
             <Grid item>
-                <a href="#" onClick={() => handleMode('sendEmail')} className="recover-pass">Recuperar contraseña</a>
+                <a href="#" onClick={() => handleMode('send-email')} className="recover-pass">Recuperar contraseña</a>
             </Grid>
             <Grid item>
                 <Button variant="contained" className="btn-login">
