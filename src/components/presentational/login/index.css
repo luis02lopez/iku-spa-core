@@ -41,6 +41,7 @@
     background: #333333 !important;
     color: #fff !important;
     border-radius: 0px !important;
+    text-transform: capitalize !important;
 }
 .input-login {
     background: #fff !important;

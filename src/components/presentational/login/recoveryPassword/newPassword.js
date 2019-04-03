@@ -8,7 +8,7 @@ const NewPassword = () => (
         <FormControl fullWidth variant="filled" >
             <InputLabel>
                 <LockOutlined className="pass-icon" />
-                CONTRASEÑA
+                Nueva contraseña
             </InputLabel>
             <FilledInput  type="password" autoFocus disableUnderline className="input-login" name="new-pass" />
         </FormControl>
@@ -16,7 +16,7 @@ const NewPassword = () => (
         <FormControl fullWidth variant="filled" className="mt-4">
             <InputLabel> 
                 <LockOutlined className="pass-icon" />
-                NUEVA CONTRASEÑA
+                Repetir contraseña
             </InputLabel>
             <FilledInput type="password" disableUnderline className="input-login" name="new-pass-rep" />
         </FormControl>
