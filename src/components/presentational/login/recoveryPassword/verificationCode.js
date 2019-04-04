@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormGroup, FormControl, InputLabel, FilledInput, Grid, Button } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 const VerificationCode = ({ handleMode }) => (
 
@@ -19,8 +20,8 @@ const VerificationCode = ({ handleMode }) => (
                         <a href="#" className="recover-pass">Enviar código nuevamente</a>
                     </Grid>
                     <Grid item>
-                        <Button variant="contained" className="btn-login"  onClick={() => handleMode('new-pass')}>
-                            Enviar
+                        <Button variant="contained" className="btn-login">
+                            <Link className="link-btn" to="/login/new_password">Enviar</Link>
                         </Button>
                     </Grid>
                 </Grid>

@@ -25,8 +25,9 @@ class LoginContainer extends Component {
     }
     render() {
         const { email, pass, mode }=  this.state;
+        const { routes } = this.props;
         return (
-            <Login email={email} pass={pass} handleChange={this.handleChange} mode={mode} handleMode={this.handleMode} />
+            <Login email={email} pass={pass} handleChange={this.handleChange} mode={mode} handleMode={this.handleMode} routes={routes} />
         );
     }
 }

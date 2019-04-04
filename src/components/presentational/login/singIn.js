@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormGroup, FormControl, InputLabel, FilledInput, Grid, Button } from '@material-ui/core';
 import { LockOutlined } from '@material-ui/icons';
+import { Link } from "react-router-dom";
 
 const SignIn = ({email, pass, handleChange, handleMode}) => (
 
@@ -20,7 +21,7 @@ const SignIn = ({email, pass, handleChange, handleMode}) => (
 
         <Grid container justify="space-between" className="mt-4">
             <Grid item>
-                <a href="#" onClick={() => handleMode('send-email')} className="recover-pass">Recuperar contraseña</a>
+                <Link to="/login/recover_password" className="recover-pass">Recuperar contraseña</Link>
             </Grid>
             <Grid item>
                 <Button variant="contained" className="btn-login">
