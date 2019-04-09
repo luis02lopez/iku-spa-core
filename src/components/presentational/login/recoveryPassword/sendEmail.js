@@ -11,7 +11,7 @@ const SendEmail = ({ handleMode }) => (
         <Grid container justify="flex-end" className="mt-4">
             <Grid item>
                 <Button variant="contained" className="btn-login">
-                    <Link className="link-btn" to="/login/new_password">Enviar</Link>
+                    <Link className="link-btn" to="/login/code">Enviar</Link>
                 </Button>
             </Grid>
         </Grid>
