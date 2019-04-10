@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Login from '../../presentational/login';
 
 
 class LoginContainer extends Component {
-    state = {
-        email: '',
-        pass: '',
-        mode: 'login'
-    }
-
+    
     handleChange = evt => {
         //get target and value
         const name = evt.target.name;
@@ -24,12 +21,16 @@ class LoginContainer extends Component {
         this.setState({ mode });
     }
     render() {
-        const { email, pass, mode }=  this.state;
-        const { routes } = this.props;
+        const { routes, email,pass } = this.props;
         return (
-            <Login email={email} pass={pass} handleChange={this.handleChange} mode={mode} handleMode={this.handleMode} routes={routes} />
+            <Login email={email} pass={pass} handleChange={this.handleChange} handleMode={this.handleMode} routes={routes} />
         );
     }
 }
 
-export default LoginContainer;
+const mapStateToProps = (state) => ({
+    email: state.email,
+    pass: state.pass,
+});
+
+export default connect(mapStateToProps)(LoginContainer);
