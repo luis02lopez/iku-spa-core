@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Login from '../../presentational/login';
 
@@ -7,30 +7,22 @@ import Login from '../../presentational/login';
 class LoginContainer extends Component {
     
     handleChange = evt => {
-        //get target and value
-        const name = evt.target.name;
-        const value = evt.target.value;
-        console.log(name,value);
+        const { setValue } = this.props; 
+
         //update value
-        this.setState({[name]: value});
+        setValue(evt);
     }
 
-    handleMode = mode => {
-        //Change the state ex: Login, send Email, write code...
-        console.log(mode);
-        this.setState({ mode });
-    }
     render() {
-        const { routes, email,pass } = this.props;
+        const { routes } = this.props;
         return (
-            <Login email={email} pass={pass} handleChange={this.handleChange} handleMode={this.handleMode} routes={routes} />
+            <Login routes={routes} />
         );
     }
 }
 
-const mapStateToProps = (state) => ({
-    email: state.email,
-    pass: state.pass,
-});
+Login.protoTypes = {
+    routes: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
 
-export default connect(mapStateToProps)(LoginContainer);
+export default LoginContainer

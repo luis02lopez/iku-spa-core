@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import './index.css';
 
-const Login = ({email, pass, handleChange,mode, handleMode, routes}) => (
+const Login = ({routes}) => (
     <Grid container justify="center" className ="login-container">
         <Grid item xs={5} className="login">
             <Grid container justify="center">
@@ -13,16 +13,13 @@ const Login = ({email, pass, handleChange,mode, handleMode, routes}) => (
             </Grid>
 
            <Grid className="login-form-container" container direction="column">
-                {/* <Grid item xs>
-                    <p className="text">{mode !== 'login' ? 'Recuperar contraseña' :
-                         mode === 'new-pass' || mode === 'restored-pass' ? 'Restablecer contraseña' : ''}</p>
-                </Grid> */}
                 <Grid item xs className="login-form">
                   <Switch>
                     <Redirect from="/login" exact to="/login/sign_up" />
                     {
-                        routes.map((route,i) => (
-                            <Route key={route.path} path={route.path} component={route.component} />
+                        routes.map(route => (
+                            <Route key={route.path} path={route.path} render={(props) => 
+                                <route.component {...props} componentProps={route.componentProps && route.componentProps}/> }/>
                         ))
                     }
                   </Switch>

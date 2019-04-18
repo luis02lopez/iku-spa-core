@@ -1,14 +1,21 @@
+import { SIGN_IN, SET_VALUE_LOGIN } from '../actions';
 
-const login = (state = {},action) => {
+
+const loginReducer = (state = {email:'email', pass: ''} ,action) => {
 
     switch (action.type) {
-        case 'SIGN_IN': {
-           const { email, pass } = action.payload;
-           return {...state, email, pass };
+        case SIGN_IN: {
+            
+           return state;
         }
+        case SET_VALUE_LOGIN: {
+
+            return {...state, [action.payload.name]: action.payload.value};
+         }
+
         default:
             return state;
     }
 }
 
-export default login;
+export default loginReducer;
